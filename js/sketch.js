@@ -11,32 +11,31 @@ function setup() {
 function draw() {
     // Conditionellle nous permettant de savoir si la souris est appuyée
     // et si le timer est écoulé
-    // if (frameCount % (timer * 60) == 0 && !mouseIsPressed) {
-    //     // Appel de notre fonction generator
-    //     generator(width / 2, height / 2, height - 150);
-    // }
-    // circle(200, 200, 200);
-    noStroke();
-    lines();
-    rond();
-    tour();
+    if (frameCount % (timer * 60) == 0 && !mouseIsPressed) {
+        // Appel de notre fonction generator
+        noStroke();
+        lines(width / 2, height / 1.97, width / 2, 1000);
+        rond(width / 2, height / 2, 300);
+        tour(width / 2, height / 1.97, 350, 50, 20);
+    }
+
 }
 
-function rond() {
+function rond(x, y, size) {
     noStroke();
     fill(0);
-    circle(width / 2, height / 2, 300);
+    circle(x, y, size);
 }
 
-function tour() {
+function tour(x, y, sizeA, sizeB, angle) {
     fill(20);
-    rect(width / 2, height / 1.97, 350, 50, 20);
+    rect(x, y, sizeA, sizeB, angle);
 }
 
-function lines() {
+function lines(x1, y1, x2, y2) {
     stroke(color(255, 0, 0));
     strokeWeight(50);
-    line(width / 2, height / 1.97, width / 2, 1000);
+    line(x1, y1, x2, y2);
 
 }
 // Fonction avec quatres paramètres
